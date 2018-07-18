@@ -1,0 +1,8 @@
+#!/bin/sh
+# SPDX-License-Identifier: LGPL-2.1-or-later
+# Copyright © 2009-2018 ANSSI. All Rights Reserved.
+# Copyright 2013 SGDSN/ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU Lesser General Public License v2.1
+
+/sbin/start-stop-daemon --stop -x /sbin/netd

@@ -1,0 +1,140 @@
+# CLIP ChangeLog for app-clip/clip-netd
+
+*clip-netd-2.3.3-r2 (04 Sep 2015)
+
+  04 Sep 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-netd-2.3.3-r2.ebuild, -clip-netd-2.3.3-r1.ebuild:
+  Fix bug: clip-rm does not exist in this context, use core-rm. 
+
+*clip-netd-2.3.3-r1 (31 Jul 2015)
+
+  31 Jul 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-netd-2.3.3-r1.ebuild, -clip-netd-2.3.3.ebuild:
+  Fix regression on the netup init script on clip-hermes build of the gateways:
+  depend() would always fail because stunnel is not present on the system.
+
+
+*clip-netd-2.3.3 (18 Apr 2014)
+
+  18 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.3.3.ebuild, -clip-netd-2.3.2-r1.ebuild:
+  Redirect std* to /dev/null when running scripts.
+
+*clip-netd-2.3.2-r1 (30 Dec 2013)
+
+  30 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.3.2-r1.ebuild, -clip-netd-2.3.2.ebuild:
+  Force rebuild to add openrc dependency.
+
+*clip-netd-2.3.2 (14 Oct 2013)
+
+  14 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.3.2.ebuild, -clip-netd-2.3.1.ebuild,
+  -files/_debian:
+  Switch to local.d snippets for netd startup.
+
+*clip-netd-2.3.1 (14 Oct 2013)
+
+  14 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.3.1.ebuild, -clip-netd-2.3.0-r1.ebuild:
+  Better compatibility of init script with openrc.
+
+*clip-netd-2.3.0-r1 (18 Sep 2013)
+
+  18 Sep 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.3.0-r1.ebuild, -clip-netd-2.3.0.ebuild:
+  Add verictl entry for ipsec-updownd - forced inheritable 
+  SYS_ADMIN|CONTEXT|NET_ADMIN, so as to be able to run 
+  vsaddr.
+  Regen distfile to avoid autotools warnings.
+
+*clip-netd-2.3.0 (23 Apr 2012)
+
+  23 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.3.0.ebuild, -clip-netd-2.2.1.ebuild:
+  Add ipsec-updownd.
+
+  12 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  clip-netd-2.2.1.ebuild:
+  Fix clip-lib dependency.
+
+*clip-netd-2.2.1 (26 Mar 2012)
+
+  26 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.2.1.ebuild, -clip-netd-2.2.ebuild:
+  Build fix with gcc-4.6.1.
+
+  24 Nov 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  clip-netd-2.1-r1.ebuild:
+  Depend on automake-1.10
+
+*clip-netd-2.2 (07 Nov 2011)
+
+  07 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.2.ebuild, -clip-netd-2.1-r1.ebuild,
+  files/net-change-profile:
+  Change netd-client so that it only outputs the character it
+  received from the daemon - makes it easier to parse when read
+  from a script. Add a 'quiet' mode to net-change-profile, which 
+  only outputs the same character.
+
+*clip-netd-2.1-r1 (26 Oct 2011)
+
+  26 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.1-r1.ebuild, -clip-netd-2.1.ebuild,
+  +files/net-change-profile:
+  Install netd-client and a wrapper-script (net-change-profile)
+  in ADMIN to enable changing the profile from command line.
+
+*clip-netd-2.1 (21 Oct 2011)
+
+  21 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.1.ebuild, -clip-netd-2.0-r3.ebuild:
+  Add netd-client, to facilitate restarting the network from a script.
+
+*clip-netd-2.0-r3 (24 Jun 2010)
+
+  24 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.0-r3.ebuild, -clip-netd-2.0-r2.ebuild,
+  files/netup:
+  Fix netup dependencies, add IUSE clip-hermes.
+
+*clip-netd-2.0-r2 (17 Jun 2010)
+
+  17 Jun 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-netd-2.0-r2.ebuild, -clip-netd-2.0-r1.ebuild,
+  +files/netup:
+  Add virtual netup init.d script and remove clip-hermes.
+
+*clip-netd-2.0-r1 (18 Mar 2010)
+
+  18 Mar 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-netd-2.0-r1.ebuild, -clip-netd-2.0.ebuild:
+  Change the start script for clip-hermes.
+
+*clip-netd-2.0 (07 Sep 2009)
+
+  07 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-2.0.ebuild, -clip-netd-1.1.0.ebuild:
+  Add support for listing wireless cells. Major bump since
+  it requires the client to first write a command before 
+  reading the result.
+
+*clip-netd-1.1.0 (01 Jul 2009)
+
+  01 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-1.1.0.ebuild, -clip-netd-1.0.1.ebuild:
+  Support listening on several sockets (max. 4), to allow e.g.
+  interaction with dhcpcd when it fails to renew its lease.
+
+*clip-netd-1.0.1 (24 Jun 2009)
+
+  24 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-netd-1.0.1.ebuild, -clip-netd-1.0.ebuild:
+  Properly export PATH before running external scripts.
+
+*clip-netd-1.0 (15 Jun 2009)
+
+  15 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-netd-1.0.ebuild:
+  Initial import.
